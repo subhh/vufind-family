@@ -1,0 +1,13 @@
+<?php $this->headScript('SCRIPT', include __DIR__ . '/family.js'); ?>
+<?php $this->headStyle()->captureStart(); ?>
+<?= include __DIR__ . '/family.css' ?>
+<?php $this->headStyle()->captureEnd(); ?>
+<nav id="family" data-identifier="<?=$this->escapeHtmlAttr($record->getUniqueID()) ?>" data-source="<?=$record->getSourceIdentifier() ?>">
+    <header><?=$this->transEsc('Existing issues/volumes'); ?></header>
+    <p>
+        <?php $recordId = $record->getUniqueID(); ?>
+        <a href="<?= $this->escapeHtmlAttr(sprintf('/vufind/Search/Results?lookfor=hierarchy_top_id:%s%%20-id:%s&sort=year', $recordId, $recordId)) ?>">
+            <?= $this->transEsc('Treffer'); ?> : <?= $this->transEsc('Alle anzeigen'); ?>
+        </a>
+    </p>
+</nav>

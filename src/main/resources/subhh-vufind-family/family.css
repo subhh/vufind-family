@@ -1,0 +1,9 @@
+<?php
+
+$css = <<<CSS
+#family { display: none; }
+#family ul { list-style: none; }
+#family ul li + li { margin-top: 1rem; }
+CSS;
+
+return $css;
